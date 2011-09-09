@@ -162,7 +162,7 @@ static int oops(struct pcm *pcm, int e, const char *fmt, ...)
     va_end(ap);
     sz = strlen(pcm->error);
 
-    if (errno)
+    if (e)
         snprintf(pcm->error + sz, PCM_ERROR_MAX - sz,
                  ": %s", strerror(e));
     return -1;
